@@ -12,6 +12,7 @@ import {
   FileJsonIcon,
   ClipboardIcon,
   ClipboardCheckIcon,
+  TestTubeIcon,
   type LucideProps
 } from "lucide-react";
 
@@ -33,9 +34,14 @@ interface ResultProps {
     oldLength: number;
     newLength: number;
   };
+  onCopyToTester?: () => void;
 }
 
-export default function Results({ results, lengths }: ResultProps) {
+export default function Results({
+  results,
+  lengths,
+  onCopyToTester
+}: ResultProps) {
   const [isCopying, setIsCopying] = useState(false);
 
   const handleExport = useCallback(
@@ -98,7 +104,7 @@ export default function Results({ results, lengths }: ResultProps) {
   return (
     <section className="relative flex grow flex-col gap-4 rounded-lg bg-gray-700 p-4 shadow-md">
       {results.length > 0 && (
-        <p className="absolute left-0 top-0 z-50 w-full rounded-t bg-primary p-2 text-sm text-background">
+        <p className="absolute left-0 top-0 z-50 w-full rounded-t bg-primary p-2 text-sm text-primary-foreground">
           {lengths.newLength > 0 ? (
             <span>
               {results.length} Results after removing{" "}
@@ -120,6 +126,17 @@ export default function Results({ results, lengths }: ResultProps) {
       />
       <div className="grid grid-cols-1 gap-1 md:grid-cols-3 md:gap-2">
         {saveButtons}
+        {onCopyToTester && (
+          <Button
+            className="flex w-full items-center justify-center bg-primary text-primary-foreground transition-colors duration-200 ease-in-out hover:bg-primary/90 md:col-span-3"
+            onClick={onCopyToTester}
+            title="Copy to proxy tester"
+            disabled={!results.length}
+          >
+            <TestTubeIcon className="mr-2" size={18} />
+            Copy to Tester
+          </Button>
+        )}
         <Button
           className="flex w-full items-center justify-center transition-colors duration-200 ease-in-out md:col-span-3"
           variant="outline"

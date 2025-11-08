@@ -42,7 +42,8 @@ Scrape proxies from all over the world directly in your browser
   </tr>
   <tr>
     <td align="center"><img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/download.svg" width="40"><br><b>Export Options</b></td>
-    <td align="center" colspan="2"><img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/shield.svg" width="40"><br><b>CORS Compatible</b></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/shield.svg" width="40"><br><b>CORS Compatible</b></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/test-tube.svg" width="40"><br><b>Proxy Testing</b></td>
   </tr>
   <tr>
     <td>
@@ -50,13 +51,26 @@ Scrape proxies from all over the world directly in your browser
       • JSON format available<br>
       • Easy integration with tools
     </td>
-    <td colspan="2">
+    <td>
       • Bypasses CORS restrictions<br>
       • Wide range of accessible sources<br>
       • Secure scraping process
     </td>
+    <td>
+      • Validate proxy availability<br>
+      • Speed testing capabilities<br>
+      • Country-based filtering
+    </td>
   </tr>
 </table>
+
+### 🚀 New Features
+
+- **Proxy Validation**: Test if proxies are working and responsive
+- **Speed Testing**: Measure proxy response times to find the fastest ones
+- **Country Detection**: Automatically detect proxy locations and filter by country
+- **Advanced Filtering**: Filter results by geographic location
+- **Enhanced Export**: Export with additional metadata (speed, status, country)
 
 ## Contributing
 
